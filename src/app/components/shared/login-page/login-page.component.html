@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card">
+    <h2>Sign in</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="username">Username</label>
+      <input type="email" formControlName="username" id="username" placeholder="Enter your email">
+      <span *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">Please enter a valid email
+        address</span>
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" id="password" placeholder="Enter your password">
+      <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">Please enter a strong
+        password</span>
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      <a routerLink="/register">New user?</a>
+    </form>
+  </div>
+</div>

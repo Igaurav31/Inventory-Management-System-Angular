@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="navbar">
+        <div class="icon">
+            <h2>ShopIt</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a>Admin Actions</a>
+                    <div class="profile_submenu">
+                        <ul>
+                            <li><a [routerLink]="'products'">products</a></li>
+                            <li><a [routerLink]="'categories'">Product Categories</a></li>
+                            <li><a [routerLink]="'customers'">Registered Customers</a></li>
+                            <li><a [routerLink]="'orders'">Orders</a></li>
+                            <li><a [routerLink]="''" (click)="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>{{username}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

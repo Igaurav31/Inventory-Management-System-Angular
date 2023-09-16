@@ -1,0 +1,105 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+img {
+  height: 360px;
+  max-width: 288px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background-color: #084531;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn:hover {
+  font-weight: bolder;
+}
+
+input {
+  border: 1.5px solid;
+  padding: 0.45rem 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  width: 60px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+}
+
+.card_title {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.summary {
+  background-color: white;
+  border-radius: 7px;
+  padding: 1rem;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summary-total {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  margin: 5px 0;
+  padding: 2px 0;
+}
+
+.checkout-btn {
+  display: block;
+  float: none;
+  padding: 10px 0;
+  width: 100%;
+  color: white;
+  background-color: #084531;
+  border-radius: 5px;
+}
+
+.checkout-btn:hover {
+  font-weight: bolder;
+}

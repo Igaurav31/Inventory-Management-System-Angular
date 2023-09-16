@@ -1,0 +1,39 @@
+<div class="navbar">
+  <div class="icon">
+    <h1>ShopIt</h1>
+  </div>
+  <div class="searchbar">
+    <input #s type="text" class="active" placeholder="search" (keyup.enter)="search(s.value)" [(ngModel)]="searchTerm"
+      (input)="onChange()">
+    <div class="icon clear-icon" *ngIf="searchTerm" (click)="clearSearch()">
+      <span class="clear-emoji">❌</span>
+    </div>
+    <div class="icon">
+      <i class="fas fa-search" (click)="search(s.value)">Q</i>
+    </div>
+    <div class="suggestions" *ngIf="suggestions.length > 0 && searchTerm.length > 0">
+      <ul>
+        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+          {{ suggestion}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="menu">
+    <ul>
+      <li><a>Profile</a>
+        <div class="profile_submenu">
+          <ul>
+            <li>{{username}}</li>
+            <!-- <li><a [routerLink]="'your-orders'">Your orders</a></li> -->
+            <li><a (click)="navigateTo('your-orders')">Your orders</a></li>
+            <li><a [routerLink]="''" (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+
+      </li>
+      <li><a (click)="navigateTo('cart')">Cart({{noOfProductsInCart}})</a></li>
+    </ul>
+  </div>
+
+</div>

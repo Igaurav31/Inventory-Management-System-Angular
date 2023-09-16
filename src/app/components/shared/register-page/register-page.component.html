@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="card">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <label for="username">Email/Username</label>
+      <input type="email" formControlName="username" id="username" placeholder="Enter your email" required>
+      <span *ngIf="!registerForm.get('username')?.valid && registerForm.get('username')?.touched">Please enter a valid
+        email address</span>
+
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" id="name" placeholder="Enter your name" required>
+      <span *ngIf="!registerForm.get('name')?.valid && registerForm.get('name')?.touched">Please enter a valid
+        name</span>
+
+      <select name="gender" formControlName="gender" id="gender" placeholder="Select gender" required>
+        <option value="" disabled selected>Select gender</option>
+        <option *ngFor="let obj of genderOptions" [value]="obj">{{obj}}</option>
+      </select>
+
+      <label for="phone">Phone number</label>
+      <input type="number" class="no-spinner" formControlName="phone" id="phone" placeholder="Enter your phone number"
+        required>
+      <span *ngIf="!registerForm.get('phone')?.valid && registerForm.get('phone')?.touched">Please enter a valid
+        Phone number</span>
+
+      <label for="address">Address</label>
+      <input type="text" formControlName="address" id="address" placeholder="Enter your address" required>
+      <span *ngIf="!registerForm.get('address')?.valid && registerForm.get('address')?.touched">Please enter a valid
+        address</span>
+
+      <label for="city">City</label>
+      <input type="text" formControlName="city" id="city" placeholder="Enter your city" required>
+      <span *ngIf="!registerForm.get('city')?.valid && registerForm.get('city')?.touched">Please enter valid city
+      </span>
+
+      <label for="pincode">Pin-Code</label>
+      <input type="pincode" formControlName="pincode" id="pincode" placeholder="Enter your pincode" required>
+      <span *ngIf="!registerForm.get('pincode')?.valid && registerForm.get('pincode')?.touched">Please enter a valid
+        Pin-Code
+      </span>
+
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" id="password" placeholder="Enter your password" required>
+      <span *ngIf="!registerForm.get('password')?.valid && registerForm.get('password')?.touched">Please enter a strong
+        password</span>
+
+      <button type="submit" [disabled]="!registerForm.valid">Register</button>
+
+      <a routerLink="/login">Already a user?</a>
+    </form>
+  </div>
+</div>

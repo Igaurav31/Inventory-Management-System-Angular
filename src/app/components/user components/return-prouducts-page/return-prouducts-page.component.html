@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div class="main">
+    <h3>Items in cart: </h3>
+    <ul class="cards" *ngIf="productsInLastCart">
+        <li class="cards_item" *ngFor="let product of productsInLastCart;let i = index;">
+            <div class="card">
+                <div class="card_image"><img src={{product.product.imageURL}}></div>
+                <div class="card_content">
+                    <h2 class="card_title">{{product.product.name}}</h2>
+                    <h3>Price: {{product.product.sellingPrice}} </h3>
+                    <h3>No of products you bought : {{product.quantity}}</h3>
+                    <input type="number" min="1" value="1" max={{product.quantity}} [(ngModel)]="product.quantity"
+                        (ngModelChange)="updateQuantity(product.product, i)">
+                    <h3>Subtotal: {{product.subtotal}} </h3>
+                    <button class="btn card_btn" (click)="removeFromCart(product.product, i)">Return</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <div class="summary">
+        Bill
+        <div class="summary-total">
+            <div class="total-title">Total</div>
+            <div class="total-value">{{lastCart.totalBill}}</div>
+        </div>
+        <button class="checkout-btn" (click)="returnProducts()">Confirm Changes</button>
+    </div>
+
+    <app-footer></app-footer>

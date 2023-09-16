@@ -1,0 +1,70 @@
+* {
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+  height: 60px;
+  /* for stick navbar */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+.navbar .icon {
+  font-weight: 900;
+  font-size: larger;
+  color: #084531;
+}
+
+.navbar .menu ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar .menu ul li a {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* for profile submenu */
+
+.menu {
+  position: relative;
+}
+
+.menu ul li:hover .profile_submenu {
+  display: block;
+  background-color: white;
+  left: 0;
+  position: absolute;
+  top: 100%;
+}
+
+.menu ul li:hover .profile_submenu ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu ul li:hover .profile_submenu ul li {
+  width: 150px;
+  padding: 10px;
+}
+
+.profile_submenu {
+  display: none;
+}
+
+.searchbar .icon .fas {
+  color: black;
+  font-weight: 100;
+}

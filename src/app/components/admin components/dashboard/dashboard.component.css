@@ -1,0 +1,105 @@
+.main {
+  margin: 0 30px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+img {
+  height: 360px;
+  max-width: 288px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+/* .btn {
+  margin-top: 10px;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background-color: #084531;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn:hover {
+  font-weight: bolder;
+} */
+
+input {
+  border: 1.5px solid;
+  padding: 0.45rem 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  width: 60px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom right, #00bfad, #99a3d4);
+}
+
+.card_content {
+  padding: 1rem;
+}
+
+.card_title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.main ul li {
+  list-style: none;
+}
+
+/* .main ul li a {
+  text-decoration: none;
+  color: blue;
+}
+
+.main ul li a:hover {
+  text-decoration: underline;
+  color: red;
+} */
+
+button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover {
+  text-decoration: underline;
+  color: red;
+}

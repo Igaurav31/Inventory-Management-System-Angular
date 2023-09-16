@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="orders-container">
+    <h1>Your Orders</h1>
+    <div class="order-list">
+        <div class="order-item">
+            <div class="order-details">
+                <h2>Order #12345</h2>
+                <p>Order Date: September 1, 2023</p>
+                <p>Total Amount: ₹100.00</p>
+                <p>Status: Delivered</p>
+            </div>
+            <div class="order-actions">
+                <button class="view-details-btn" (click)="navigateTo('/your-orders/cardId')">View Details</button>
+                <button style="margin-top:10px" class="view-details-btn" (click)="navigateTo('return/orderId')">Return
+                    products</button>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="order-details">
+                <h2>Order #12345</h2>
+                <p>Order Date: September 1, 2023</p>
+                <p>Total Amount: ₹100.00</p>
+                <p>Status: Delivered</p>
+            </div>
+            <div class="order-actions">
+                <button class="view-details-btn">view details </button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

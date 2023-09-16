@@ -1,0 +1,57 @@
+<app-header></app-header>
+<main>
+    <div class="cart-box">
+        <div class="cart-header">
+            <h1>Your Cart</h1>
+        </div>
+        <div class="cart-list">
+            <div class="cart-item" *ngFor="let cartItem of cartImportedFromService; let i = index;">
+                <div class="cart-product-image">
+                    <img src={{cartItem.product.imageURL}} alt="Product Image">
+                </div>
+                <div class="cart-product-details">
+                    <div class="cart-details">
+                        <p>{{cartItem.product.name}}</p>
+                        <p>Price: {{cartItem.product.sellingPrice}}rs</p>
+                        <div class="cart-quantity">
+                            <input type="number" min="1" value="1" max={{cartItem.product.stock}}
+                                [(ngModel)]="cartItem.quantity" (ngModelChange)="updateQuantity(cartItem.product, i)">
+                        </div>
+                        <p>Subtotal: {{cartItem.subtotal}}</p>
+                        <div class="cart-remove">
+                            <button (click)="removeFromCart(cartItem.product)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="cart-summary-box">
+        <div class="cart-summary-label">Summary</div>
+
+        <div class="cart-summary-subtotal">
+            Subtotal: {{totalBillOfCart }}
+        </div>
+
+        <div class="cart-summary-coupon-code">
+            <input type="text" placeholder="Enter coupon code" [(ngModel)]="couponCode"
+                (ngModelChange)="getDiscount(couponCode)">
+
+        </div>
+        <div class="cart-summary-coupon">
+
+            Discount: <span>{{discountAmount}}</span>
+        </div>
+
+        <div class="cart-summary-total">
+            Total: {{totalBillOfCart - discountAmount}}
+        </div>
+
+        <div class="cart-summary-checkout">
+            <button class="cart-checkout-button" (click)="redirToCheckout()">Checkout</button>
+        </div>
+    </aside>
+
+</main>
+<app-footer></app-footer>

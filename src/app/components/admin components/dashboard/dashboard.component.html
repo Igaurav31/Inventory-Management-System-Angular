@@ -1,0 +1,66 @@
+<app-admin-header></app-admin-header>
+
+<div class="main">
+    <h3>Dashboard </h3>
+    <ul class="cards">
+        <li class="cards_item">
+            <div class="card">
+                <div class="card_content">
+                    <h2 class="card_title">Total Customers: {{totalCustomers}}</h2>
+                    <ul>
+                        <!-- <li><a [routerLink]="'customers'">See all customers</a></li> -->
+                        <button (click)="showAllCustomers()">See all customers</button>
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+        <li class="cards_item">
+            <div class="card">
+                <div class="card_content">
+                    <h2 class="card_title">Total Products: {{totalOrders}}</h2>
+                    <ul>
+                        <li>
+                            <!-- <a [routerLink]="'products'">See all products</a> -->
+                            <button (click)="showAllProducts()">See all products</button>
+                        </li>
+                        <li>
+                            <!-- <a [routerLink]="'add-products'">Add New Products</a> -->
+                            <button (click)="toggleProductForm()">Add new product</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+        <li class="cards_item">
+            <div class="card">
+                <div class="card_content">
+                    <h2 class="card_title">Total Orders: {{totalProducts}}</h2>
+                    <ul>
+                        <!-- <li><a [routerLink]="'orders'">See all orders</a></li> -->
+                        <button (click)="showAllOrders()">See all products</button>
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+        <li class="cards_item">
+            <div class="card">
+                <div class="card_content">
+                    <h2 class="card_title">Total Categories: {{totalCategories}}</h2>
+                    <ul>
+                        <!-- <li><a [routerLink]="'categories'">See all categories</a></li> -->
+                        <li><button (click)="showAllCategories()">See all product Categories</button></li>
+                        <!-- <li><a [routerLink]="'add-categories'">Add New category</a></li> -->
+                        <li><button (click)="toggleCategoryForm()">Add new category</button></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<app-insights-table *ngIf="rowData.length > 0" [rowData]="rowData" [columnDefs]="columnDefs"></app-insights-table>
+<app-add-products *ngIf="showProductForm"></app-add-products>
+<app-add-categories *ngIf="showCategoriesForm"></app-add-categories>

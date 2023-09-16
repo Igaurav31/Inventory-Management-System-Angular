@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <h2>Enter new product</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <label for="name">Product Name</label>
+            <input type="text" formControlName="name" id="name" placeholder="Enter Product Name">
+
+            <select name="category" id="category" formControlName="category" placeholder="Enter Product Category">
+                <option value="" disabled selected>Select Category</option>
+                <option *ngFor="let obj of productCategories" [value]="obj.name">{{obj.name}}</option>
+            </select>
+
+            <label for="imageURL">Image URL</label>
+            <input type="url" formControlName="imageURL" id="imageURL" placeholder="Enter image URL">
+
+            <label for="sellingPrice">Selling Price</label>
+            <input type="number" formControlName="sellingPrice" id="sellingPrice" placeholder="Enter Selling Price">
+
+            <label for="costPrice">Cost Price</label>
+            <input type="number" formControlName="costPrice" id="costPrice" placeholder="Enter Cost Price">
+
+            <label for="stock">Stock</label>
+            <input type="number" formControlName="stock" id="stock" placeholder="Enter Stock">
+
+            <label for="tags">tags</label>
+            <input type="text" formControlName="tags" id="tags" placeholder="Enter Tags">
+
+            <label for="description">Description</label>
+            <textarea name="description" formControlName="description" id="description" cols="30" rows="10"
+                placeholder="Enter Description"></textarea>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>

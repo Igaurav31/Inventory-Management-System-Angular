@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="product-detail">
+  <div class="product-image">
+    <img src={{productToDisplayDetails.imageURL}} alt="Product Image">
+  </div>
+
+  <div class="product-info">
+    <h1 class="product-name" style="font-weight: bold;">{{productToDisplayDetails.name}}</h1>
+    <p class="product-price">₹{{productToDisplayDetails.sellingPrice}}</p>
+    <p class="product-category">Category: {{productToDisplayDetails.category}}</p>
+    <p class="product-availability">Availability: {{productToDisplayDetails.stock}}</p>
+    <p class="product-shipping">Shipping Area: India</p>
+    <p class="product-shipping-fee">Shipping Fee: Free</p>
+    <p class="product-description">{{productToDisplayDetails.description}}</p>
+    <button class="add-to-cart-button" (click)="AddToCart(productToDisplayDetails)">Add to Cart</button>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<!-- <div class="main">
+  <ul class="cards">
+    <li class="cards_item" *ngFor="let product of searchResultProduct">
+      <div class="card">
+        <div class="card_image"><img src={{product.imageURL}}></div>
+        <div class="card_content">
+          <h2 class="card_title">{{product.name}}</h2>
+          <p class="card_text">{{product.sellingPrice}} ₹</p>
+          <button class="btn card_btn" (click)="AddToCart(product)">Add to cart</button>
+          <button class="btn card_btn" (click)="openDetails(product.name)">More Details</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+<h3 *ngIf="searchTerm != ''" style="padding: 0px 30px;">Search result for {{searchTerm}}: </h3>
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of searchResultProduct">
+    <img src={{product.imageURL}} alt="" class="product-image">
+    <h2 class="product-name">{{product.name}}</h2>
+    <p class="card_text" style="font-size: 1.5rem;">{{product.sellingPrice}} ₹</p>
+    <button class="buy-button" (click)="AddToCart(product)">Add to cart</button>
+    <button class="buy-button" (click)="openDetails(product.name)">More Details</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

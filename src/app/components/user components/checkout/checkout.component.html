@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="checkout-container">
+    <h2>Select Payment Method</h2>
+    <div class="payment-methods">
+        <button (click)="selectPaymentMethod('UPI')">UPI</button>
+        <button (click)="selectPaymentMethod('CC')">Credit Card</button>
+    </div>
+
+    <div *ngIf="selectedMethod === 'UPI'" class="payment-details">
+        <input [(ngModel)]="upiId" placeholder="Enter UPI ID">
+        <button (click)="processPayment('UPI')">Pay</button>
+    </div>
+
+    <div *ngIf="selectedMethod === 'CC'" class="payment-details" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- <input [(ngModel)]="ccNumber" placeholder="Credit Card Number">
+        <input [(ngModel)]="ccExpiry" placeholder="Expiry Date">
+        <input [(ngModel)]="ccCVC" placeholder="CVC"> -->
+
+        <label for="ccNumber">Credit Card Number</label>
+        <input type="number" formControlName="ccNumber" id="ccNumber" class="no-spinner"
+            placeholder="Credit Card Number">
+        <span *ngIf="!loginForm.get('ccNumber')?.valid && loginForm.get('ccNumber')?.touched">Please enter a valid
+            Credit Card
+            number</span>
+        <label for="ccExpiry">Expiry Date</label>
+        <input type="month" formControlName="ccExpiry" id="ccExpiry" placeholder="Expiry Date (MM/YYYY)">
+        <span *ngIf="!loginForm.get('ccExpiry')?.valid &&loginForm.get('ccExpiry')?.touched">Please
+            enter a valid
+            date</span>
+        <span
+            *ngIf="!loginForm.get('ccExpiry')?.valid  && loginForm.get('ccExpiry')?.hasError('expired') &&loginForm.get('ccExpiry')?.touched">Card
+            is expired</span>
+        <label for="cvv">CVV</label>
+        <input type="number" formControlName="cvv" id="cvv" class="no-spinner" placeholder="CVV">
+        <span *ngIf="!loginForm.get('cvv')?.valid && loginForm.get('cvv')?.touched">Please enter a valid
+            Credit Card
+            number</span>
+
+        <button type="submit" [disabled]="!loginForm.valid" (click)="processPayment('CC')">Pay</button>
+
+    </div>
+</div>
+
+<app-footer></app-footer>
